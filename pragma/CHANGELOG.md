@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Pragma::Filter was moved to a separate pragma-filter project
 - Pragma::Macro was moved to a separate pragma-macro project
 - Pragma::Decorator::Error was moved to Pragma::Decorator
+- CRUD operations were moved to a separate pragma-resource project
 
 ## [2.5.0]
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Pragma
-  module Operation
-    Macro = Pragma::Macro
+  module Resource
+    VERSION = "0.1.0"
   end
 end

@@ -30,3 +30,9 @@ module Pragma
     end
   end
 end
+
+module Pragma
+  module Operation
+    Destroy = Pragma::Resource::Destroy
+  end
+end

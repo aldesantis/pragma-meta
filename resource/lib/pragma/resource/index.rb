@@ -41,3 +41,9 @@ module Pragma
     end
   end
 end
+
+module Pragma
+  module Operation
+    Index = Pragma::Resource::Index
+  end
+end

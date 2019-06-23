@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "pragma/operation"
-require "pragma/macro"
+require "pragma/resource"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

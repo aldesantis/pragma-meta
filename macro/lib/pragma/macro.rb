@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'pragma/filter'
+require 'trailblazer-macro'
 
 require "pragma/macro/version"
 
@@ -60,5 +60,11 @@ module Pragma
         super message
       end
     end
+  end
+end
+
+module Pragma
+  module Operation
+    Macro = Pragma::Macro
   end
 end

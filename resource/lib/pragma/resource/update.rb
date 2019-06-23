@@ -2,12 +2,12 @@
 
 module Pragma
   module Operation
-    # Creates a new record and responds with the decorated record.
+    # Finds an existing record, updates it and responds with the decorated record.
     #
     # @author Alessandro Desantis
-    class Create < Pragma::Operation::Base
+    class Update < Pragma::Operation::Base
       step Macro::Classes()
-      step Macro::Model()
+      step Macro::Model(:find_by)
       step Macro::Policy()
       step Macro::Contract::Build()
       step Macro::Contract::Validate()
@@ -16,10 +16,14 @@ module Pragma
       step :respond!, name: 'respond'
 
       def respond!(options)
-        options['result.response'] = Response::Created.new(
-          entity: options['result.decorator.instance']
-        )
+        options['result.response'] = Response::Ok.new(entity: options['result.decorator.instance'])
       end
     end
+  end
+end
+
+module Pragma
+  module Operation
+    Update = Pragma::Resource::Update
   end
 end

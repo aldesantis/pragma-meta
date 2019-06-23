@@ -18,3 +18,9 @@ module Pragma
     end
   end
 end
+
+module Pragma
+  module Operation
+    Show = Pragma::Resource::Show
+  end
+end

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Upgraded to trailblazer-operation 0.5.1
+- Trailblazer has been abandoned in favor of dry-transaction
 
 ## [2.2.0]
 

@@ -13,8 +13,5 @@ end
 
 module Pragma
   module Operation
-    def self.included(klass)
-      klass.include Dry::Transaction
-    end
   end
 end

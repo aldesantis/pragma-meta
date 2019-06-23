@@ -21,6 +21,14 @@ module Pragma
               .downcase
               .to_sym
         end
+
+        def call(*args)
+          if args.length == 2
+            super({ params: args.first }.merge(args.last).transform_keys(&:to_sym))
+          else
+            super
+          end
+        end
       end
     end
   end

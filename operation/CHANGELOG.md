@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Upgraded to trailblazer-operation 0.5.1
+
 ## [2.2.0]
 
 ### Added

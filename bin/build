@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Pragma::Contract
+echo "****************************"
+echo "* Testing Pragma::Contract *"
+echo "****************************"
+cd contract
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
+# Pragma::Decorator
+echo "*****************************"
+echo "* Testing Pragma::Decorator *"
+echo "*****************************"
+cd ../decorator
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
+# Pragma::Operation
+echo "*****************************"
+echo "* Testing Pragma::Operation *"
+echo "*****************************"
+cd ../operation
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
+# Pragma::Policy
+echo "**************************"
+echo "* Testing Pragma::Policy *"
+echo "**************************"
+cd ../policy
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
+# Pragma
+echo "******************"
+echo "* Testing Pragma *"
+echo "******************"
+cd ../pragma
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec

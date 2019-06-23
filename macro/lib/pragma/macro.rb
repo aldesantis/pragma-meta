@@ -2,8 +2,6 @@
 
 require 'trailblazer-macro'
 
-require "pragma/macro/version"
-
 require 'pragma/macro/classes'
 require 'pragma/macro/decorator'
 require 'pragma/macro/filtering'

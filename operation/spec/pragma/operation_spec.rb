@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe Pragma::Operation::Base do
+RSpec.describe Pragma::Operation do
   before(:all) do
-    class CreateUser < Pragma::Operation::Base
+    class CreateUser
+      include Pragma::Operation
+
       step :validate
       step :create
 

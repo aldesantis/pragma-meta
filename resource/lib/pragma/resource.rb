@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "pragma/resource/version"
-
 require 'pragma/resource/index'
 require 'pragma/resource/show'
 require 'pragma/resource/create'

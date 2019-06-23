@@ -3,8 +3,6 @@
 require 'roar'
 require 'adaptor'
 
-require 'pragma/decorator/version'
-
 require 'pragma/decorator/base'
 
 require 'pragma/decorator/association'
@@ -31,10 +29,10 @@ require 'pragma/decorator/pagination/adapter'
 
 require 'pragma/decorator/error'
 
-require 'pragma/association_includer/base'
-require 'pragma/association_includer/active_record'
-require 'pragma/association_includer/poro'
-require 'pragma/association_includer'
+require 'pragma/decorator/association_includer/base'
+require 'pragma/decorator/association_includer/active_record'
+require 'pragma/decorator/association_includer/poro'
+require 'pragma/decorator/association_includer'
 
 module Pragma
   # Represent your API resources in JSON with minimum hassle.

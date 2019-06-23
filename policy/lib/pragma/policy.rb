@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pragma/policy/version'
 require 'pragma/policy/scope'
 require 'pragma/policy/base'
 require 'pragma/policy/pundit'

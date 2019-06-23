@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "pragma/filter/version"
-
 require 'pragma/filter/base'
 require 'pragma/filter/boolean'
 require 'pragma/filter/equals'

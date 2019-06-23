@@ -1,45 +1,29 @@
 # frozen_string_literal: true
 
 RSpec.describe Pragma::Operation::Base do
-  subject(:result) do
-    operation_klass.call(*args)
-  end
+  before(:all) do
+    class CreateUser < Pragma::Operation::Base
+      step :validate
+      step :create
 
-  let(:operation_klass) do
-    Class.new(described_class) do
-      step :process!
+      private
 
-      def process!(options, params:, current_user_id:)
-        params[:foo] == 'bar' && current_user_id == 1
+      def validate(input)
+        if input[:name].empty?
+          Failure(error: 'Name should be filled!')
+        else
+          Success(input)
+        end
+      end
+
+      def create(input)
+        Success(OpenStruct.new(name: input[:name]))
       end
     end
   end
 
-  context 'with TRB 0.5.1 signature' do
-    let(:args) do
-      [
-        {
-          params: { foo: 'bar' },
-          current_user_id: 1
-        },
-      ]
-    end
-
-    it 'runs correctly' do
-      expect(result).to be_success
-    end
-  end
-
-  context 'with TRB 0.4.1 signature' do
-    let(:args) do
-      [
-        { foo: 'bar' },
-        { 'current_user_id' => 1 },
-      ]
-    end
-
-    it 'runs correctly' do
-      expect(result).to be_success
-    end
+  it 'can be called' do
+    result = CreateUser.new.call(name: 'John Doe')
+    expect(result.value!.name).to eq('John Doe')
   end
 end

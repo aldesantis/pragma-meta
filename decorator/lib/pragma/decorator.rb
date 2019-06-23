@@ -29,6 +29,8 @@ require 'pragma/decorator/pagination/adapter/kaminari'
 require 'pragma/decorator/pagination/adapter/will_paginate'
 require 'pragma/decorator/pagination/adapter'
 
+require 'pragma/decorator/error'
+
 module Pragma
   # Represent your API resources in JSON with minimum hassle.
   module Decorator

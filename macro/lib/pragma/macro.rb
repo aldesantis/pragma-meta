@@ -1,7 +1,24 @@
 # frozen_string_literal: true
 
+require 'pragma/filter'
+
+require "pragma/macro/version"
+
+require 'pragma/macro/classes'
+require 'pragma/macro/decorator'
+require 'pragma/macro/filtering'
+require 'pragma/macro/ordering'
+require 'pragma/macro/pagination'
+require 'pragma/macro/policy'
+require 'pragma/macro/model'
+require 'pragma/macro/contract/build'
+require 'pragma/macro/contract/validate'
+require 'pragma/macro/contract/persist'
+
 module Pragma
   module Macro
+    class Error < StandardError; end
+
     class << self
       # Returns a skill or raises a {#MissingSkillError}.
       #
@@ -22,7 +39,7 @@ module Pragma
     # Error raised when a skill is required but not present.
     #
     # @private
-    class MissingSkillError < StandardError
+    class MissingSkillError < Error
       # Initializes the error.
       #
       # @param macro [String] the macro requiring the skill

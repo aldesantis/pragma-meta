@@ -9,29 +9,7 @@ require 'pragma/decorator'
 
 require 'pragma/version'
 
-require 'pragma/decorator/error'
-
-require 'pragma/filter/base'
-require 'pragma/filter/equals'
-require 'pragma/filter/like'
-require 'pragma/filter/ilike'
-require 'pragma/filter/where'
-require 'pragma/filter/scope'
-require 'pragma/filter/boolean'
-
 require 'pragma/operation/filter'
-
-require 'pragma/macro'
-require 'pragma/macro/classes'
-require 'pragma/macro/decorator'
-require 'pragma/macro/filtering'
-require 'pragma/macro/ordering'
-require 'pragma/macro/pagination'
-require 'pragma/macro/policy'
-require 'pragma/macro/model'
-require 'pragma/macro/contract/build'
-require 'pragma/macro/contract/validate'
-require 'pragma/macro/contract/persist'
 
 require 'pragma/operation/macro'
 

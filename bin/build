@@ -38,6 +38,24 @@ export BUNDLE_GEMFILE=$PWD/Gemfile
 bundle check || bundle update --quiet
 bundle exec rspec spec
 
+# Pragma::Macro
+echo "*************************"
+echo "* Testing Pragma::Macro *"
+echo "*************************"
+cd ../macro
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
+# Pragma::Filter
+echo "**************************"
+echo "* Testing Pragma::Filter *"
+echo "**************************"
+cd ../filter
+export BUNDLE_GEMFILE=$PWD/Gemfile
+bundle check || bundle update --quiet
+bundle exec rspec spec
+
 # Pragma
 echo "******************"
 echo "* Testing Pragma *"

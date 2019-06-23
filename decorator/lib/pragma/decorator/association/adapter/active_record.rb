@@ -92,9 +92,9 @@ module Pragma
 
           def compute_belongs_to_fk
             primary_key = if association_reflection.polymorphic?
-              association_reflection.options[:primary_key] || associated_object.class.primary_key
-            else
-              association_reflection.association_primary_key
+                            association_reflection.options[:primary_key] || associated_object.class.primary_key
+                          else
+                            association_reflection.association_primary_key
             end
 
             if model.association(reflection.attribute).loaded?

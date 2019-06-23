@@ -4,7 +4,7 @@ RSpec.describe Pragma::Operation::Base do
   subject(:result) do
     operation_klass.call(
       { foo: 'bar' },
-      { 'current_user_id' => 1 }
+      'current_user_id' => 1
     )
   end
 

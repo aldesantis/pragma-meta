@@ -90,17 +90,17 @@ RSpec.describe Pragma::Operation::Index do
 
   it 'adds pagination info to the response' do
     expect(result['result.response'].entity.to_hash).to match(a_hash_including(
-      'current_page' => 1,
-      'per_page' => 30,
-      'total_entries' => 2
-    ))
+                                                                'current_page' => 1,
+                                                                'per_page' => 30,
+                                                                'total_entries' => 2
+                                                              ))
   end
 
   it 'orders properly' do
     expect(result['result.response'].entity.to_hash['data']).to match([
-      a_hash_including('id' => 1),
-      a_hash_including('id' => 3)
-    ])
+                                                                        a_hash_including('id' => 1),
+                                                                        a_hash_including('id' => 3)
+                                                                      ])
   end
 
   context 'when applying a filter' do
@@ -112,8 +112,8 @@ RSpec.describe Pragma::Operation::Index do
 
     it 'filters properly' do
       expect(result['result.response'].entity.to_hash['data']).to match([
-        a_hash_including('title' => 'Wrong')
-      ])
+                                                                          a_hash_including('title' => 'Wrong')
+                                                                        ])
     end
   end
 end

@@ -53,9 +53,9 @@ RSpec.describe Pragma::Decorator::Association do
 
   let(:result) do
     JSON.parse(subject.to_json(user_options: {
-      expand: expand,
-      current_user: current_user
-    }))
+                                 expand: expand,
+                                 current_user: current_user
+                               }))
   end
 
   let(:expand) { [] }
@@ -104,8 +104,7 @@ RSpec.describe Pragma::Decorator::Association do
     before do
       decorator_klass.send(:belongs_to, :customer,
                            decorator: customer_decorator_klass,
-                           render_nil: false
-      )
+                           render_nil: false)
     end
 
     let(:customer) { nil }
@@ -119,8 +118,7 @@ RSpec.describe Pragma::Decorator::Association do
     before do
       decorator_klass.send(:belongs_to, :customer,
                            decorator: customer_decorator_klass,
-                           render_nil: true
-      )
+                           render_nil: true)
     end
 
     it 'renders nil associations' do
@@ -138,8 +136,7 @@ RSpec.describe Pragma::Decorator::Association do
 
       decorator_klass.send(:belongs_to, :customer,
                            decorator: customer_decorator_klass,
-                           exec_context: :decorator
-      )
+                           exec_context: :decorator)
     end
 
     it 'calls the getter on the decorator' do
@@ -150,8 +147,7 @@ RSpec.describe Pragma::Decorator::Association do
   context 'when decorator is a callable' do
     before do
       decorator_klass.send(:belongs_to, :customer,
-                           decorator: ->(_associated_object) { customer_decorator_klass }
-      )
+                           decorator: ->(_associated_object) { customer_decorator_klass })
     end
 
     let(:expand) { ['customer'] }
@@ -171,8 +167,7 @@ RSpec.describe Pragma::Decorator::Association do
     before do
       decorator_klass.send(:belongs_to, :user,
                            decorator: customer_decorator_klass,
-                           as: :customer
-      )
+                           as: :customer)
     end
 
     let(:invoice) { OpenStructWithPk.new(user: customer) }

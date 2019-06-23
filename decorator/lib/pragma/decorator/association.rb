@@ -68,10 +68,10 @@ module Pragma
         def create_association_definition(type, attribute_name, options)
           association_name = options.fetch(:as, attribute_name.to_sym)
           associations[association_name] = Reflection.new(options.merge(
-            type: type,
-            name: association_name,
-            attribute: attribute_name
-          ))
+                                                            type: type,
+                                                            name: association_name,
+                                                            attribute: attribute_name
+                                                          ))
         end
 
         def create_association_property(attribute_name, options)

@@ -21,8 +21,8 @@ module Pragma
 
       def include!(options)
         options['model'] = AssociationIncluder
-          .load_adaptor(options['model'])
-          .include_associations(options['params'][:expand] || [])
+                           .load_adaptor(options['model'])
+                           .include_associations(options['params'][:expand] || [])
       end
 
       # TODO: Turn this into a macro.

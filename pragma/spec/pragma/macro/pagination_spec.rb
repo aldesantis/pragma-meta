@@ -27,10 +27,10 @@ RSpec.describe Pragma::Macro::Pagination do
 
         def model!(options)
           options['model'] = Model.new([
-            OpenStruct.new(name: 'Hole to Feed'),
-            OpenStruct.new(name: 'In Chains'),
-            OpenStruct.new(name: 'Never Let Me Down Again')
-          ])
+                                         OpenStruct.new(name: 'Hole to Feed'),
+                                         OpenStruct.new(name: 'In Chains'),
+                                         OpenStruct.new(name: 'Never Let Me Down Again')
+                                       ])
         end
       end
     end
@@ -38,9 +38,9 @@ RSpec.describe Pragma::Macro::Pagination do
 
   it 'applies default pagination' do
     expect(result['model'].map(&:name)).to match_array([
-      'Hole to Feed',
-      'In Chains'
-    ])
+                                                         'Hole to Feed',
+                                                         'In Chains'
+                                                       ])
   end
 
   context 'with custom pagination parameters' do
@@ -53,8 +53,8 @@ RSpec.describe Pragma::Macro::Pagination do
 
     it 'paginates with the given parameters' do
       expect(result['model'].map(&:name)).to match_array([
-        'Never Let Me Down Again'
-      ])
+                                                           'Never Let Me Down Again'
+                                                         ])
     end
   end
 
@@ -67,9 +67,9 @@ RSpec.describe Pragma::Macro::Pagination do
 
     it 'responds with 422 Unprocessable Entity' do
       expect(result['model'].map(&:name)).to match_array([
-        'Hole to Feed',
-        'In Chains'
-      ])
+                                                           'Hole to Feed',
+                                                           'In Chains'
+                                                         ])
     end
   end
 
@@ -82,9 +82,9 @@ RSpec.describe Pragma::Macro::Pagination do
 
     it 'paginates successfully' do
       expect(result['model'].map(&:name)).to match_array([
-        'Hole to Feed',
-        'In Chains'
-      ])
+                                                           'Hole to Feed',
+                                                           'In Chains'
+                                                         ])
     end
   end
 

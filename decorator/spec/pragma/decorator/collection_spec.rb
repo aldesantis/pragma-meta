@@ -22,8 +22,8 @@ RSpec.describe Pragma::Decorator::Collection do
 
     it 'renders the collection' do
       expect(JSON.parse(subject.to_json)).to match('data' => [
-        'foo' => 'bar'
-      ])
+                                                     'foo' => 'bar'
+                                                   ])
     end
   end
 
@@ -45,8 +45,8 @@ RSpec.describe Pragma::Decorator::Collection do
 
     it 'renders the collection' do
       expect(JSON.parse(subject.to_json)).to match('data' => [
-        'qux' => 'bar'
-      ])
+                                                     'qux' => 'bar'
+                                                   ])
     end
   end
 end

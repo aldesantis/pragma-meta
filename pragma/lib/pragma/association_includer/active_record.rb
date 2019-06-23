@@ -11,9 +11,9 @@ module Pragma
 
       def include_associations(expands)
         relation.includes(validate_associations(
-          relation.model,
-          destruct_associations(expands)
-        ))
+                            relation.model,
+                            destruct_associations(expands)
+                          ))
       end
 
       private

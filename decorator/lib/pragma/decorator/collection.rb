@@ -35,13 +35,13 @@ module Pragma
         klass.class_eval do
           collection :data, exec_context: :decorator, getter: (lambda do |options:, **|
             represented_collection = if self.class.instance_decorator.is_a?(Proc)
-              represented.map do |item|
-                self.class.instance_decorator.call(item).represent(item).to_hash(options)
-              end
-            elsif self.class.instance_decorator
-              self.class.instance_decorator.represent(represented.to_a).to_hash(options)
-            else
-              represented
+                                       represented.map do |item|
+                                         self.class.instance_decorator.call(item).represent(item).to_hash(options)
+                                       end
+                                     elsif self.class.instance_decorator
+                                       self.class.instance_decorator.represent(represented.to_a).to_hash(options)
+                                     else
+                                       represented
             end
             represented_collection
           end)

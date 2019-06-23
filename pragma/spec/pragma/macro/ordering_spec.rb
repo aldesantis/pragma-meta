@@ -39,22 +39,22 @@ RSpec.describe Pragma::Macro::Ordering do
 
         def model!(options)
           options['model'] = Model.new([
-            OpenStruct.new(
-              name: 'Hole to Feed',
-              rating: 4,
-              album: OpenStruct.new(name: 'Sounds of the Universe')
-            ),
-            OpenStruct.new(
-              name: 'In Chains',
-              rating: 3,
-              album: OpenStruct.new(name: 'Sounds of the Universe')
-            ),
-            OpenStruct.new(
-              name: 'Never Let Me Down Again',
-              rating: 5,
-              album: OpenStruct.new(name: 'Music for the Masses')
-            )
-          ])
+                                         OpenStruct.new(
+                                           name: 'Hole to Feed',
+                                           rating: 4,
+                                           album: OpenStruct.new(name: 'Sounds of the Universe')
+                                         ),
+                                         OpenStruct.new(
+                                           name: 'In Chains',
+                                           rating: 3,
+                                           album: OpenStruct.new(name: 'Sounds of the Universe')
+                                         ),
+                                         OpenStruct.new(
+                                           name: 'Never Let Me Down Again',
+                                           rating: 5,
+                                           album: OpenStruct.new(name: 'Music for the Masses')
+                                         )
+                                       ])
         end
       end
     end
@@ -62,10 +62,10 @@ RSpec.describe Pragma::Macro::Ordering do
 
   it 'applies default ordering' do
     expect(result['model'].map(&:name)).to eq([
-      'Never Let Me Down Again',
-      'Hole to Feed',
-      'In Chains'
-    ])
+                                                'Never Let Me Down Again',
+                                                'Hole to Feed',
+                                                'In Chains'
+                                              ])
   end
 
   context 'when column is namespaced' do
@@ -78,10 +78,10 @@ RSpec.describe Pragma::Macro::Ordering do
 
     it 'orders by given association' do
       expect(result['model'].map(&:name)).to eq([
-        'Never Let Me Down Again',
-        'Hole to Feed',
-        'In Chains'
-      ])
+                                                  'Never Let Me Down Again',
+                                                  'Hole to Feed',
+                                                  'In Chains'
+                                                ])
     end
   end
 
@@ -95,10 +95,10 @@ RSpec.describe Pragma::Macro::Ordering do
 
     it 'orders with the given column and direction' do
       expect(result['model'].map(&:name)).to eq([
-        'Hole to Feed',
-        'In Chains',
-        'Never Let Me Down Again'
-      ])
+                                                  'Hole to Feed',
+                                                  'In Chains',
+                                                  'Never Let Me Down Again'
+                                                ])
     end
   end
 

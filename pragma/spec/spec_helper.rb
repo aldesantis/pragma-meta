@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'coveralls'
 Coveralls.wear!
 
 require 'pry'
 
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'pragma'
 
 module API

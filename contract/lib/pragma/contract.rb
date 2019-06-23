@@ -5,8 +5,6 @@ require 'dry-validation'
 require 'dry-types'
 require 'reform'
 
-require 'pragma/contract/version'
-
 require 'pragma/contract/coercion'
 
 require 'pragma/contract/model_finder/base'

@@ -31,6 +31,11 @@ require 'pragma/decorator/pagination/adapter'
 
 require 'pragma/decorator/error'
 
+require 'pragma/association_includer/base'
+require 'pragma/association_includer/active_record'
+require 'pragma/association_includer/poro'
+require 'pragma/association_includer'
+
 module Pragma
   # Represent your API resources in JSON with minimum hassle.
   module Decorator

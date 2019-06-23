@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "pragma/resource/version"
+require_relative '../lib/pragma/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pragma-resource"
-  spec.version       = Pragma::Resource::VERSION
+  spec.version       = Pragma::VERSION
   spec.authors       = ["Alessandro Desantis"]
   spec.email         = ["desa.alessandro@gmail.com"]
 

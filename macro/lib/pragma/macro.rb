@@ -2,16 +2,12 @@
 
 require 'trailblazer-macro'
 
-require 'pragma/macro/classes'
-require 'pragma/macro/decorator'
-require 'pragma/macro/filtering'
-require 'pragma/macro/ordering'
-require 'pragma/macro/pagination'
-require 'pragma/macro/policy'
-require 'pragma/macro/model'
-require 'pragma/macro/contract/build'
-require 'pragma/macro/contract/validate'
-require 'pragma/macro/contract/persist'
+Zeitwerk::Loader.new.tap do |loader|
+  loader.tag = File.basename(__FILE__, ".rb")
+  loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+  loader.push_dir(File.expand_path('..', __dir__))
+  loader.setup
+end
 
 module Pragma
   module Macro

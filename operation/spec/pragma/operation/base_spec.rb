@@ -3,7 +3,6 @@
 RSpec.describe Pragma::Operation::Base do
   before(:all) do
     class CreateUser < Pragma::Operation::Base
-
       step :validate
       step :normalize
       step :create

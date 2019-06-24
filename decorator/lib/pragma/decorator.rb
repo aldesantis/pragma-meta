@@ -2,40 +2,16 @@
 
 require 'roar'
 require 'adaptor'
+require 'zeitwerk'
 
-require 'pragma/decorator/base'
-
-require 'pragma/decorator/association'
-require 'pragma/decorator/association/reflection'
-require 'pragma/decorator/association/bond'
-require 'pragma/decorator/association/adapter/base'
-require 'pragma/decorator/association/adapter/active_record'
-require 'pragma/decorator/association/adapter/poro'
-require 'pragma/decorator/association/adapter'
-require 'pragma/decorator/association/errors'
-
-require 'pragma/decorator/timestamp'
-
-require 'pragma/decorator/type'
-
-require 'pragma/decorator/collection'
-
-require 'pragma/decorator/pagination'
-
-require 'pragma/decorator/pagination/adapter/base'
-require 'pragma/decorator/pagination/adapter/kaminari'
-require 'pragma/decorator/pagination/adapter/will_paginate'
-require 'pragma/decorator/pagination/adapter'
-
-require 'pragma/decorator/error'
-
-require 'pragma/decorator/association_includer/base'
-require 'pragma/decorator/association_includer/active_record'
-require 'pragma/decorator/association_includer/poro'
-require 'pragma/decorator/association_includer'
+Zeitwerk::Loader.new.tap do |loader|
+  loader.tag = File.basename(__FILE__, ".rb")
+  loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+  loader.push_dir(File.expand_path('..', __dir__))
+  loader.setup
+end
 
 module Pragma
-  # Represent your API resources in JSON with minimum hassle.
   module Decorator
   end
 end

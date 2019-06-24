@@ -4,19 +4,16 @@ require 'adaptor'
 require 'dry-validation'
 require 'dry-types'
 require 'reform'
+require 'zeitwerk'
 
-require 'pragma/contract/coercion'
-
-require 'pragma/contract/model_finder/base'
-require 'pragma/contract/model_finder/active_record'
-require 'pragma/contract/model_finder'
-
-require 'pragma/contract/base'
-
-require 'pragma/contract/types'
+Zeitwerk::Loader.new.tap do |loader|
+  loader.tag = File.basename(__FILE__, ".rb")
+  loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+  loader.push_dir(File.expand_path('..', __dir__))
+  loader.setup
+end
 
 module Pragma
-  # Form objects on steroids for your HTTP API.
   module Contract
   end
 end

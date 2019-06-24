@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require 'pragma/filter/base'
-require 'pragma/filter/boolean'
-require 'pragma/filter/equals'
-require 'pragma/filter/ilike'
-require 'pragma/filter/like'
-require 'pragma/filter/scope'
-require 'pragma/filter/where'
+Zeitwerk::Loader.new.tap do |loader|
+  loader.tag = File.basename(__FILE__, ".rb")
+  loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+  loader.push_dir(File.expand_path('..', __dir__))
+  loader.setup
+end
 
 module Pragma
   module Filter

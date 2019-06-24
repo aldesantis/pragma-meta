@@ -8,8 +8,6 @@ module Pragma
     # This is the base contract that all of your resource-specific contracts should inherit from.
     #
     # It's just an extension of +Reform::Form+ with some helper methods for coercion.
-    #
-    # @author Alessandro Desantis
     class Base < Reform::Form
       feature Reform::Form::Coercion
       feature Pragma::Contract::Coercion

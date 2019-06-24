@@ -3,8 +3,6 @@
 module Pragma
   module Operation
     # Finds an existing record, destroys it and responds 204 No Content.
-    #
-    # @author Alessandro Desantis
     class Destroy < Pragma::Operation::Base
       step Macro::Classes()
       step Macro::Model(:find_by)

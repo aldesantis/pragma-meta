@@ -5,8 +5,6 @@ module Pragma
     module Association
       # This error is raised when an association's type is different from its type as reported by
       # the model's reflection.
-      #
-      # @author Alessandro Desantis
       class InconsistentTypeError < StandardError
         # Initializes the error.
         #

@@ -3,8 +3,6 @@
 module Pragma
   module Resource
     # Creates a new record and responds with the decorated record.
-    #
-    # @author Alessandro Desantis
     class Create < Pragma::Operation::Base
       step Macro::Classes()
       step Macro::Model()

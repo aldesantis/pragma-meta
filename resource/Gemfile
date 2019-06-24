@@ -6,3 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # Specify your gem's dependencies in pragma-resource.gemspec
 gemspec
+
+gem 'pragma-operation', path: '../operation'
+gem 'pragma-contract', path: '../contract'
+gem 'pragma-decorator', path: '../decorator'
+gem 'pragma-policy', path: '../policy'

@@ -1,15 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Pragma::Operation::Create do
+RSpec.describe Pragma::Resource::Create do
   subject(:result) do
-    described_class.call(
-      params,
-      'current_user' => current_user,
-      'model.class' => model_klass,
-      'decorator.instance.class' => decorator_klass,
-      'policy.default.class' => policy_klass,
-      'contract.default.class' => contract_klass
-    )
+    described_class.new.call(params: params, current_user: current_user)
   end
 
   let(:params) do
@@ -17,36 +10,6 @@ RSpec.describe Pragma::Operation::Create do
   end
 
   let(:current_user) { OpenStruct.new(id: 1) }
-
-  let(:model_klass) do
-    Class.new(OpenStruct) do
-      def save
-        true
-      end
-    end
-  end
-
-  let(:decorator_klass) do
-    Class.new(Pragma::Decorator::Base)
-  end
-
-  let(:policy_klass) do
-    Class.new(Pragma::Policy::Base) do
-      def create?
-        user.id == 1
-      end
-    end
-  end
-
-  let(:contract_klass) do
-    Class.new(Pragma::Contract::Base) do
-      property :title
-
-      validation do
-        required(:title).filled(:str?)
-      end
-    end
-  end
 
   it 'responds with 201 Created' do
     expect(result['result.response'].status).to eq(201)

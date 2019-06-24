@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'pragma/contract'
+require 'pragma/decorator'
+require 'pragma/policy'
+require 'pragma/operation'
 require 'zeitwerk'
 
 Zeitwerk::Loader.new.tap do |loader|
